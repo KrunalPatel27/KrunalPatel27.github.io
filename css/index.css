@@ -1,0 +1,12 @@
+.header-class{
+	background: rgb(255,66,66);
+	margin: -10px;
+	margin-top: -25px;
+	padding: 45px;
+	text-align: center;
+}
+.footer-class{
+	background: rgb(207,198,198);
+	margin: -10px;
+	padding: 15px;
+}
