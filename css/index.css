@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css?family=Trade+Winds');
+@import url('https://fonts.googleapis.com/css?family=Faster+One|Trade+Winds');
 .header-class{
 	background: url("../assets/orange-blue.png");
 	background-size:100% 100%;
@@ -50,5 +50,18 @@ footer{
     left: 0;
     bottom: 0;
     width: 100%;
+}
+.left
+{
+  float: left;
+}
+
+.right
+{
+  float: right;
+}
+.timeClock{
+	font-family: Faster One;
+	font-size: 30px;
 }
 

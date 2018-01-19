@@ -1,6 +1,41 @@
 <!DOCTYPE html>
 <html>
 	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet"> 
+	<script language="JavaScript1.2">
+
+		var howOften = 3; //number often in seconds to rotate
+		var current = 0; //start the counter at 0
+		var ns6 = document.getElementById&&!document.all; //detect netscape 6
+
+		// place your images, text, etc in the array elements here
+		var items = new Array();
+    	items[0]="<a href='link.htm' ><img alt='image0 (9K)' src=' assets/image01.png' height='300' width='300' border='0' /></a>"; //a linked image
+    	items[1]="<a href='link.htm'><img alt='image1 (9K)' src='assets/giphy.gif' height='300' width='300' border='0' /></a>"; //a linked image
+    	items[2]="<a href='link.htm'><img alt='image2 (9K)' src='assets/image01.png' height='300' width='300' border='0' /></a>"; //a linked image
+   		items[3]="<a href='link.htm'><img alt='image3 (9K)' src='assets/giphy.gif' height='300' width='300' border='0' /></a>"; //a linked image
+    	items[4]="<a href='link.htm'><img alt='image4 (9K)' src='assets/image01.png' height='300' width='300' border='0' /></a>"; //a linked image
+    	items[5]="<a href='link.htm'><img alt='image5 (18K)' src='assets/giphy.gif' height='300' width='300' border='0' /></a>"; //a linked image
+		function rotater() {
+    	document.getElementById("placeholder").innerHTML = items[current];
+    	current = (current==items.length-1) ? 0 : current + 1;
+    	setTimeout("rotater()",howOften*1000);
+		}
+
+		function rotater() {
+    	if(document.layers) {
+        document.placeholderlayer.document.write(items[current]);
+        document.placeholderlayer.document.close();
+    	}
+    	if(ns6)document.getElementById("placeholderdiv").innerHTML=items[current]
+        if(document.all)
+            placeholderdiv.innerHTML=items[current];
+
+    	current = (current==items.length-1) ? 0 : current + 1; //increment or reset
+    	setTimeout("rotater()",howOften*1000);
+		}
+		window.onload=rotater;
+		//-->
+	</script>
 	<head>
 		<title>Krunal Patel</title>
 		<link rel="stylesheet" href="css/index.css">
@@ -14,27 +49,38 @@
 	</header>
 	
 	<body>
-	<div class="div1-class">
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="KrunalPatelResume.pdf">CV</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Krunal Patel!</h1>
-        		<img src="assets/giphy.gif" alt="Android Stopwatch">	
+		<div class="div1-class">
+			<nav>
+	    		<ul>
+	        		<li><a href="/">Home</a></li>
+		        	<li><a href="/about">About</a></li>
+	        		<li><a href="KrunalPatelResume.pdf">CV</a></li>
+	    		</ul>
+			</nav>
+			<div class="container">
+	    		<div class="blurb">
+	        		<h1>Hi there, I'm Krunal Patel!</h1>
+	        		<img src="assets/giphy.gif" alt="Android Stopwatch">	
+			</div>
 		</div>
-	</div>
-
+		
+		<layer id="placeholderlayer"></layer><div id="placeholderdiv"></div><!-- rotating banners -->
+		
 	</body>
 	
 	<footer class="footer-class">
-        	<div>
-        		<a class="footer-text-icons" href="mailto:kpate236@gmail.com">Email</a>
-        		<a class="footer-text-icons" href="https://github.com/KrunalPatel27">Github</a>
-        	</div>
+		<div class='left'><a class="footer-text-icons" href="mailto:kpate236@gmail.com">Email</a> </div> 
+		<div class='left'><a class="footer-text-icons" href="https://github.com/KrunalPatel27" style="padding-left: 20px;">Github</a></div> 
+		<div class='right timeClock'> <span id="date"  style="align-self: right; padding-right: 30px;">s</span>
+				<script type="text/javascript">
+						//Time and date purpose
+						function timeDate(){
+							var x = new Date;
+							document.getElementById("date").innerHTML = x.toLocaleTimeString();
+							setTimeout("timeDate()", 1000);
+						}
+						timeDate();
+				</script>
+		</div>
 	</footer>
 </html>
