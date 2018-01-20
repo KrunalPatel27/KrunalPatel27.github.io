@@ -4,18 +4,18 @@
 	<link rel="stylesheet" href="css/index.css"/>
 	<script language="JavaScript1.2">
 
-		var howOften = 3; //number often in seconds to rotate
+		var howOften = 5; //number often in seconds to rotate
 		var current = 0; //start the counter at 0
 		var ns6 = document.getElementById&&!document.all; //detect netscape 6
 
 		// place your images, text, etc in the array elements here
 		var items = new Array();
-    	items[0]="<a href='link.htm' ><img alt='image0 (9K)' src=' assets/image01.png' height='300' width='300' border='0' /></a>"; //a linked image
-    	items[1]="<a href='link.htm'><img alt='image1 (9K)' src='assets/giphy.gif' height='300' width='300' border='0' /></a>"; //a linked image
-    	items[2]="<a href='link.htm'><img alt='image2 (9K)' src='assets/image01.png' height='300' width='300' border='0' /></a>"; //a linked image
-   		items[3]="<a href='link.htm'><img alt='image3 (9K)' src='assets/giphy.gif' height='300' width='300' border='0' /></a>"; //a linked image
-    	items[4]="<a href='link.htm'><img alt='image4 (9K)' src='assets/image01.png' height='300' width='300' border='0' /></a>"; //a linked image
-    	items[5]="<a href='link.htm'><img alt='image5 (18K)' src='assets/giphy.gif' height='300' width='300' border='0' /></a>"; //a linked image
+    	items[0]="<div class='quotesText'> <span>You cannot fail, you can only produce results and learn.<br /></span><span>- Dr. Wayne Dyer</span></div>"; //a linked image
+    	items[1]="<div class='quotesText'> <span>Success is walking from failure to failure with no loss of enthusiasm.<br /></span><span>- Winston Churchill</span></div>";
+    	items[2]="<div class='quotesText'> <span>Hard work beats Talent when Talent doesnt work hard.<br /></span><span>- Tim Notke</span></div>";
+    	items[3]="<div class='quotesText'> <span>If you are not 100% in the game and at your best(and still play) its cheating.<br /></span><span>- MS Dhoni</span></div>";
+   		items[4]="<div class='quotesText'> <span>When I lost all of my excuses I found my results.<br /></span><span>- Anonymous</span></div>"; //a linked image
+    	items[5]="<div class='quotesText'> <span>Do not judge me by my success judge me by how many times I fell down and got back up again.<br /></span><span>- Nelson Mandela</span></div>";
 		function rotater() {
     	document.getElementById("placeholder").innerHTML = items[current];
     	current = (current==items.length-1) ? 0 : current + 1;
@@ -51,6 +51,7 @@
 	
 	<body>
 		<div class="div1-class">
+			<layer id="placeholderlayer"></layer><div id="placeholderdiv" style="margin: 0px;"></div><!-- rotating banners -->
 			<nav>
 	    		<ul>
 	        		<li><a href="/">Home</a></li>
@@ -58,6 +59,8 @@
 	        		<li><a href="KrunalPatelResume.pdf">CV</a></li>
 	    		</ul>
 			</nav>
+			
+
 			<div class="container">
 	    		<div class="blurb">
 	        		<h1>Hi there, I'm Krunal Patel!</h1>
@@ -65,7 +68,7 @@
 			</div>
 		</div>
 		
-		<layer id="placeholderlayer"></layer><div id="placeholderdiv"></div><!-- rotating banners -->
+		
 		
 	</body>
 	

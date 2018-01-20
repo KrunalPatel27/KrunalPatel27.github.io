@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css?family=Faster+One|Trade+Winds');
+@import url('https://fonts.googleapis.com/css?family=Faster+One|Satisfy|Trade+Winds');
 .header-class{
 	background: url("../assets/orange-blue.png");
 	background-size:100% 100%;
@@ -72,5 +72,16 @@ footer{
 	width: 60px;
 	height: 60px;
 	margin-top: -10px;
+}
+.quotesText{
+	background-color: rgb(255,255,255);
+	width: 500px;
+	height: 100px;
+	text-align: center;
+	font-family: Satisfy;
+ 	margin: auto;
+ 	font-size: 21px;
+ 	padding: 15px;
+ 	border-radius: 25px;
 }
 
