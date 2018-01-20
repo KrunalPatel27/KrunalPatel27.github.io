@@ -16,6 +16,9 @@
 	height: 200px;
 	width: 200px;
 	border-radius: 50%;
+	border:5px;
+	border-style: double;
+	border-color: rgb(220,220,220);
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -23,7 +26,7 @@
 
 .div1-class{
 	padding: 15px;
-	background: rgb(255, 133, 51);
+	background: rgb(242, 227, 210);
 }
 .footer-class{
 	background: rgb(207,198,198);
@@ -54,6 +57,7 @@ footer{
 .left
 {
   float: left;
+  padding-right: 20px;
 }
 
 .right
@@ -63,5 +67,10 @@ footer{
 .timeClock{
 	font-family: Faster One;
 	font-size: 30px;
+}
+#logofooter{
+	width: 60px;
+	height: 60px;
+	margin-top: -10px;
 }
 
