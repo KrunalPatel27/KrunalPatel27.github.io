@@ -1,93 +1,194 @@
 <!DOCTYPE html>
 <html>
-	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet"> 
-	<link rel="stylesheet" href="css/index.css"/>
-	<script language="JavaScript1.2">
-
-		var howOften = 5; //number often in seconds to rotate
-		var current = 0; //start the counter at 0
-		var ns6 = document.getElementById&&!document.all; //detect netscape 6
-
-		// place your images, text, etc in the array elements here
-		var items = new Array();
-    	items[0]="<div class='quotesText'> <span>You cannot fail, you can only produce results and learn.<br /></span><span>- Dr. Wayne Dyer</span></div>"; //a linked image
-    	items[1]="<div class='quotesText'> <span>Success is walking from failure to failure with no loss of enthusiasm.<br /></span><span>- Winston Churchill</span></div>";
-    	items[2]="<div class='quotesText'> <span>Hard work beats Talent when Talent doesnt work hard.<br /></span><span>- Tim Notke</span></div>";
-    	items[3]="<div class='quotesText'> <span>If you are not 100% in the game and at your best(and still play) its cheating.<br /></span><span>- MS Dhoni</span></div>";
-   		items[4]="<div class='quotesText'> <span>When I lost all of my excuses I found my results.<br /></span><span>- Anonymous</span></div>"; //a linked image
-    	items[5]="<div class='quotesText'> <span>Do not judge me by my success judge me by how many times I fell down and got back up again.<br /></span><span>- Nelson Mandela</span></div>";
-		function rotater() {
-    	document.getElementById("placeholder").innerHTML = items[current];
-    	current = (current==items.length-1) ? 0 : current + 1;
-    	setTimeout("rotater()",howOften*1000);
-		}
-
-		function rotater() {
-    	if(document.layers) {
-        document.placeholderlayer.document.write(items[current]);
-        document.placeholderlayer.document.close();
-    	}
-    	if(ns6)document.getElementById("placeholderdiv").innerHTML=items[current]
-        if(document.all)
-            placeholderdiv.innerHTML=items[current];
-
-    	current = (current==items.length-1) ? 0 : current + 1; //increment or reset
-    	setTimeout("rotater()",howOften*1000);
-		}
-		window.onload=rotater;
-		//-->
-	</script>
 	<head>
 		<title>Krunal Patel</title>	
 		<link rel="Icon" href="assets/logoKP1.png"/>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+		<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light|Fredoka+One|Rock+Salt" rel="stylesheet"> 
+		<link rel="stylesheet" href="css/index.css"/>
+		<script src="https://smtpjs.com/smtp.js"></script>
+
 	</head>
-	
-	<header class="header-class" >
-		<div>
+<body>
+
+	<header class="header" role="banner" data-header>
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+		  <!-- Brand/logo -->
+		<a class="navbar-brand" href="#"><img src="assets/logoKP1.png" alt="logo" style="height: 35px; width: 35px"></a>
+		<button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    		<span class="navbar-toggler-icon "></span>
+  		</button>
+  		<div class="collapse navbar-collapse " id="collapsibleNavbar">
+		  <!-- Links -->
+		  <ul class="navbar-nav">
+		    <li class="nav-item">
+		       <a class="nav-link" href="mailto:kpate236@gmail.com" style="font-family: Rock Salt; font-size: 18px;">Email</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link" href="https://github.com/KrunalPatel27" target="_blank" style="font-family: Fredoka One; font-size: 20px;">Github</a>
+		    </li>
+		    <li class="nav-item">
+		     <a class="nav-link" href="https://www.linkedin.com/in/krunalpatel27" target="_blank" style="font-family: Rock Salt; font-size: 18px;">Linkedin</a>
+		    </li>
+		    <li class="nav-item">
+		     <a class="nav-link" href="KrunalPatelResume.pdf" target="_blank" style="font-family: Fredoka One; font-size: 20px;">Resume</a>
+		    </li>
+		  </ul>
+		</div>
+		</nav>	
+	</header>
+		<!-- profile picture and backgorund class-->
+		<div class="header-class">
 			<img id="profile-picture" src="assets/image01.png" alt="Krunal Profile Picture">
 			<h1 class="header-text"> Krunal Patel </h1>
 		</div>
-	</header>
-	
-	<body>
+		
+		<!-- Body below header and profile picture-->
 		<div class="div1-class">
-			<layer id="placeholderlayer"></layer><div id="placeholderdiv" style="margin: 0px;"></div><!-- rotating banners -->
-			<nav>
-	    		<ul>
-	        		<li><a href="/">Home</a></li>
-		        	<li><a href="/about">About</a></li>
-	        		<li><a href="KrunalPatelResume.pdf">CV</a></li>
-	    		</ul>
-			</nav>
-			
+				<div class="container">
+				  <!--Cards regarding projects-->
+				  <p class="h2">Projects</p>
+				  <div class="row justify-content-center">
+					  <div class="card" style="width:380px">
+					    <div class="card-body">
+					      <h4 class="card-title">Android StopWatch/Timer App</h4>
+					      <p class="card-text">Basic application that I built to learn android. Key feature constant display of lap time on top left.</p>
+					      <a href="https://github.com/KrunalPatel27/AndroidStopwatch-Timer " target="_blank" class="btn btn-primary">Github Project</a>
+					    </div>
+					  </div>
+					    <div class="card" style="width:380px">
+					    <div class="card-body">
+					      <h4 class="card-title">Hadoop Map Reduce</h4>
+					      <p class="card-text">School project that gave me an intro to Map-Reduce. Here jobs were ran on AWS cluster to get the code coverage report.</p>
+					      <a href="https://github.com/KrunalPatel27/MapReduce" target="_blank" class="btn btn-primary">Github Project</a>
+					    </div>
+					  </div>
+					    <div class="card" style="width:380px">
+					    <div class="card-body">
+					      <h4 class="card-title">Random Program Generator</h4>
+					      <p class="card-text">A Program that follows rules of context free grammer to create OOP code. This was final term project for OOP class.</p>
+					      <a href="https://github.com/KrunalPatel27/RandomProgramGenerator" target="_blank" class="btn btn-primary">Github Project</a>
+					    </div>
+					  </div>
+					</div>
 
-			<div class="container">
-	    		<div class="blurb">
-	        		<h1>Hi there, I'm Krunal Patel!</h1>
-	        		<img src="assets/giphy.gif" alt="Android Stopwatch">	
+		
+					<!-- Quotes Carousel-->
+					<p></p>
+					<div class="jumbotron jumbotron-fix" style="padding: 0px; padding-top: 15px; background-color: #9898987d; margin-right: -15px; margin-left: -15px;">
+					     <div id="demo" class="carousel slide" data-ride="carousel">
+
+						  <!-- Indicators -->
+						  <ul class="carousel-indicators">
+						    <li data-target="#demo" data-slide-to="0" class="active"></li>
+						    <li data-target="#demo" data-slide-to="1"></li>
+						    <li data-target="#demo" data-slide-to="2"></li>
+						    <li data-target="#demo" data-slide-to="3"></li>
+						    <li data-target="#demo" data-slide-to="4"></li>
+						    <li data-target="#demo" data-slide-to="5"></li>
+						  </ul>
+						  
+						  <!-- The slideshow -->
+						  <div class="carousel-inner">
+						    <div class="carousel-item active">
+						      <p class="quotesText">You cannot fail, you can only produce results and learn.</p>
+						      <p class="carousel-post-author quotesText">- Dr. Wayne Dyer</p>
+						    </div>
+						    <div class="carousel-item">
+						      <p class="quotesText">Success is walking from failure to failure with no loss of enthusiasm.</p>
+						      <p class="carousel-post-author quotesText">- Winston Churchill</p>
+						    </div>
+						    <div class="carousel-item">
+						      <p class="quotesText">If you are not 100% in the game and at your best and still play, its cheating.</p>
+						      <p class="carousel-post-author quotesText">- MS Dhoni</p>
+						    </div>
+						    <div class="carousel-item">
+						      <p class="quotesText">Hard work beats Talent when Talent doesnt work hard.</p>
+						      <p class="carousel-post-author quotesText">- Tim Notke</p>
+						    </div>
+						    <div class="carousel-item">
+						      <p class="quotesText">Do not judge me by my successes, judge me by how many times I fell down and got back up again.</p>
+						      <p class="carousel-post-author quotesText">- Nelson Mandela</p>
+						    </div>
+						    <div class="carousel-item">
+						      <p class="quotesText">When I lost all of my excuses I found my results.</p>
+						      <p class="carousel-post-author quotesText">- Anonymous</p>
+						    </div>
+						  </div>
+						  
+						  <!-- Left and right controls -->
+						  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+						    <span class="carousel-control-prev-icon"></span>
+						  </a>
+						  <a class="carousel-control-next" href="#demo" data-slide="next">
+						    <span class="carousel-control-next-icon"></span>
+						  </a>
+
+						 </div>
+					</div>
+					<!-- Contact form-->
+					<div>
+						<script type="text/javascript">
+							var $form = $('form#test-form'),
+							    url = 'https://script.google.com/macros/u/0/s/AKfycbxmM5jiaxocwmfmjBaGuI1d1E0SKBOzAfEfOz3Vb7y8V6mB4Yw/exec'
+
+							$('#submit-form').on('click', function(e) {
+							  e.preventDefault();
+							  var jqxhr = $.ajax({
+							    url: url,
+							    method: "GET",
+							    dataType: "json",
+							    data: $form.serializeObject()
+							  }).fail(
+							    // do something
+							    console.warn("done")
+							  );
+							})
+						</script>
+						<form id="test-form">
+						  <div>
+						    <label>Name</label>
+						    <input type="text" name="Name" placeholder="Name"/>
+						  </div>
+
+						  <div>
+						    <label>Email</label>
+						    <input type="text" name="Email" placeholder="Email"/>
+						  </div>
+						  
+						  <div>
+						    <label>Phone</label>
+						    <input type="text" name="Phone" placeholder="Phone"/>
+						  </div>
+						  
+						  <div>
+						    <label>Message</label>
+						    <input type="text" name="Message" placeholder="Message"/>
+						  </div>
+
+						  <div>
+						    <button type="submit" id="submit-form">Submit</button>
+						  </div>
+
+						</form>
+					</div>
+
+				</div><!--end container-->
+
 			</div>
-		</div>
-		
-		
-		
-	</body>
-	
-	<footer class="footer-class">
-		<div class="left"><img id="logofooter" src="assets/logoKP1.png"></div>
-		<div class='left'><a class="footer-text-icons" href="mailto:kpate236@gmail.com">Email</a> </div> 
-		<div class='left'><a class="footer-text-icons" href="https://github.com/KrunalPatel27">Github</a></div>
-		<div class='left'><a class="footer-text-icons" href="https://www.linkedin.com/in/krunalpatel27">Linkedin</a></div> 
-		
-		<div class='right timeClock'> <span id="date"  style="align-self: right; padding-right: 30px;">s</span>
-				<script type="text/javascript">
-						//Time and date purpose
-						function timeDate(){
-							var x = new Date;
-							document.getElementById("date").innerHTML = x.toLocaleTimeString();
-							setTimeout("timeDate()", 1000);
-						}
-						timeDate();
-				</script>
-		</div>
+		</body>
+
+	<footer>
+
 	</footer>
 </html>
