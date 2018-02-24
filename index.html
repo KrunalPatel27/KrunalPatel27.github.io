@@ -16,7 +16,6 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
 		<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light|Fredoka+One|Rock+Salt" rel="stylesheet"> 
 		<link rel="stylesheet" href="css/index.css"/>
-		<script src="https://smtpjs.com/smtp.js"></script>
 
 	</head>
 <body>
@@ -52,40 +51,39 @@
 			<img id="profile-picture" src="assets/image01.png" alt="Krunal Profile Picture">
 			<h1 class="header-text"> Krunal Patel </h1>
 		</div>
-		
-		<!-- Body below header and profile picture-->
-		<div class="div1-class">
-				<div class="container">
-				  <!--Cards regarding projects-->
-				  <p class="h2">Projects</p>
-				  <div class="row justify-content-center">
-					  <div class="card" style="width:380px">
-					    <div class="card-body">
-					      <h4 class="card-title">Android StopWatch/Timer App</h4>
-					      <p class="card-text">Basic application that I built to learn android. Key feature constant display of lap time on top left.</p>
-					      <a href="https://github.com/KrunalPatel27/AndroidStopwatch-Timer " target="_blank" class="btn btn-primary">Github Project</a>
-					    </div>
-					  </div>
-					    <div class="card" style="width:380px">
-					    <div class="card-body">
-					      <h4 class="card-title">Hadoop Map Reduce</h4>
-					      <p class="card-text">School project that gave me an intro to Map-Reduce. Here jobs were ran on AWS cluster to get the code coverage report.</p>
-					      <a href="https://github.com/KrunalPatel27/MapReduce" target="_blank" class="btn btn-primary">Github Project</a>
-					    </div>
-					  </div>
-					    <div class="card" style="width:380px">
-					    <div class="card-body">
-					      <h4 class="card-title">Random Program Generator</h4>
-					      <p class="card-text">A Program that follows rules of context free grammer to create OOP code. This was final term project for OOP class.</p>
-					      <a href="https://github.com/KrunalPatel27/RandomProgramGenerator" target="_blank" class="btn btn-primary">Github Project</a>
-					    </div>
-					  </div>
-					</div>
 
+		<section class="showcase">
+				      <div class="container-fluid p-0">
+				        <div class="row no-gutters">
+
+				          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-4.jpg');"></div>
+				          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+				            <h2>Android StopWatch &amp; Timer App</h2>
+				            <p class="lead mb-0">Basic application that I built to learn android. Key feature contains display of lap time on top left.</p>
+				            <a href="https://github.com/KrunalPatel27/AndroidStopwatch-Timer " target="_blank" class="btn btn-primary" style="margin-top: 15px;">Github Project</a>
+				          </div>
+				        </div>
+				        <div class="row no-gutters">
+				          <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/java.png');"></div>
+				          <div class="col-lg-6 my-auto showcase-text">
+				            <h2>Random Program Generator</h2>
+				            <p class="lead mb-0">A Program that follows rules of context free grammer to create OOP code. This was final term project for OOP class.</p>
+				            <a href="https://github.com/KrunalPatel27/RandomProgramGenerator" target="_blank" class="btn btn-primary" style="margin-top: 15px;">Github Project</a>
+				          </div>
+				        </div>
+				        <div class="row no-gutters">
+				          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/amazon.jpg');"></div>
+				          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+				            <h2>Hadoop Map Reduce</h2>
+				            <p class="lead mb-0">School project that gave me an intro to Map-Reduce. Here distributed computing jobs were ran on AWS cluster to get the code coverage report.</p>
+				            <a href="https://github.com/KrunalPatel27/MapReduce" target="_blank" class="btn btn-primary" style="margin-top: 15px;">Github Project</a>
+				          </div>
+				        </div>
+				      </div>
+		</section>
 		
-					<!-- Quotes Carousel-->
-					<p></p>
-					<div class="jumbotron jumbotron-fix" style="padding: 0px; padding-top: 15px; background-color: #9898987d; margin-right: -15px; margin-left: -15px;">
+		<section>
+			<div class="jumbotron jumbotron-fix" style="padding: 0px; padding-top: 15px; background-image: url('img/bg-masthead.jpg');">
 					     <div id="demo" class="carousel slide" data-ride="carousel">
 
 						  <!-- Indicators -->
@@ -135,57 +133,10 @@
 						  </a>
 
 						 </div>
-					</div>
-					<!-- Contact form-->
-					<div>
-						<script type="text/javascript">
-							var $form = $('form#test-form'),
-							    url = 'https://script.google.com/macros/u/0/s/AKfycbxmM5jiaxocwmfmjBaGuI1d1E0SKBOzAfEfOz3Vb7y8V6mB4Yw/exec'
-
-							$('#submit-form').on('click', function(e) {
-							  e.preventDefault();
-							  var jqxhr = $.ajax({
-							    url: url,
-							    method: "GET",
-							    dataType: "json",
-							    data: $form.serializeObject()
-							  }).fail(
-							    // do something
-							    console.warn("done")
-							  );
-							})
-						</script>
-						<form id="test-form">
-						  <div>
-						    <label>Name</label>
-						    <input type="text" name="Name" placeholder="Name"/>
-						  </div>
-
-						  <div>
-						    <label>Email</label>
-						    <input type="text" name="Email" placeholder="Email"/>
-						  </div>
-						  
-						  <div>
-						    <label>Phone</label>
-						    <input type="text" name="Phone" placeholder="Phone"/>
-						  </div>
-						  
-						  <div>
-						    <label>Message</label>
-						    <input type="text" name="Message" placeholder="Message"/>
-						  </div>
-
-						  <div>
-						    <button type="submit" id="submit-form">Submit</button>
-						  </div>
-
-						</form>
-					</div>
-
-				</div><!--end container-->
-
 			</div>
+
+		</section>
+			
 		</body>
 
 	<footer>
