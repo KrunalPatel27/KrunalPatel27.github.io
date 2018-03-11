@@ -32,7 +32,7 @@ var data= {
 				{ 	
 					Title: "My Own Website",
 					Description: "Started this webpage with basic HTML and CSS, as I learned more about Web tools I added more features with JQuery, Bootstrap, Materials.io. Also this webpage is data driven.",
-					Link: "https://github.com/KrunalPatel27/it202spr2018",
+					Link: "https://github.com/KrunalPatel27/KrunalPatel27.github.io",
 					Image: "img/my-website.jpg"
 				}
 			],
