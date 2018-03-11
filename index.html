@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Krunal Patel</title>	
-		<link rel="Icon" href="assets/logoKP1.png"/>
+			
+		
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
@@ -47,38 +47,29 @@
 		</nav>	
 	</header>
 		<!-- profile picture and backgorund class-->
-		<div class="header-class">
-			<img id="profile-picture" src="assets/image01.png" alt="Krunal Profile Picture">
-			<h1 class="header-text"> Krunal Patel </h1>
-		</div>
+		<div class="header-class" id="header-intro"></div>
 
 		<section class="showcase">
-				      <div class="container-fluid p-0">
-				        <div class="row no-gutters">
+				      <div class="container-fluid p-0" id="projects-list">
 
-				          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-4.jpg');"></div>
+				        <div class="row no-gutters" id="project-rightImage">
+				          <div class="col-lg-6 order-lg-2 text-white showcase-img"></div>
 				          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-				            <h2>Android StopWatch App</h2>
-				            <p class="lead mb-0">Cool Stopwatch app that I built to learn android and because I didnt like the default stopwatch on Android. Key feature contains display of lap time on top left.</p>
-				            <a href="https://github.com/KrunalPatel27/AndroidStopwatch-Timer " target="_blank" class="btn btn-primary" style="margin-top: 15px;">Source code</a>
+				            <h2></h2>
+				            <p class="lead mb-0"></p>
+				            <a href="" target="_blank" class="btn btn-primary" style="margin-top: 15px;">Source code</a>
 				          </div>
 				        </div>
-				        <div class="row no-gutters">
+
+				        <div class="row no-gutters" id ="project-leftImage">
 				          <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/random.gif');"></div>
 				          <div class="col-lg-6 my-auto showcase-text">
-				            <h2>Random Program Generator</h2>
-				            <p class="lead mb-0">A Java Program that follows all rules of context free grammer to create Object Oriented Programs. This was final term project for OOP class.</p>
-				            <a href="https://github.com/KrunalPatel27/RandomProgramGenerator" target="_blank" class="btn btn-primary" style="margin-top: 15px;">Source code</a>
+				            <h2></h2>
+				            <p></p>
+				            <a href="" target="_blank" class="btn btn-primary" style="margin-top: 15px;">Source code</a>
 				          </div>
 				        </div>
-				        <div class="row no-gutters">
-				          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/amazon.jpg');"></div>
-				          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-				            <h2>Hadoop Map Reduce</h2>
-				            <p class="lead mb-0">School project that gave me an intro to Map-Reduce. Here distributed computing jobs were ran on AWS cluster to get the code coverage report. Check out the repo for youtube demo</p>
-				            <a href="https://github.com/KrunalPatel27/MapReduce" target="_blank" class="btn btn-primary" style="margin-top: 15px;">Source code</a>
-				          </div>
-				        </div>
+
 				      </div>
 		</section>
 		
@@ -136,4 +127,55 @@
 	<footer>
 
 	</footer>
+	<script src="data/data.js"></script>
+	<script>
+		$( document ).ready(function() {
+			hideOnLoad();
+			var data = loadInfo();
+			loadTitle(data);
+			loadHeader(data);
+			loadProjects(data);
+		});
+
+		function hideOnLoad(){
+			 $('#project-leftImage').hide();
+			  $('#project-rightImage').hide();
+		}
+
+		function loadTitle(data){
+			document.title = data.PersonalInfo.Firstname + " " + data.PersonalInfo.Lastname;
+			$('head').append('<link rel="Icon" href="'+ data.PersonalInfo.Icon+'"/>');
+		}
+		function loadHeader(data){
+			$('#header-intro').append('<img id="profile-picture" src="'+ data.Header.Headshot+ '" alt="'+ data.PersonalInfo.Firstname +' Profile Picture">');
+			$('#header-intro').append('<h1 class="header-text">'+ data.PersonalInfo.Firstname + " " + data.PersonalInfo.Lastname +'</h1>');
+		}
+		function loadProjects(data){
+			console.log(data.Projects.length);
+			var numberOfProjects = data.Projects.length;
+			for( i=0; i < numberOfProjects; i++){
+				if(i%2==0){
+					var clone = $('#project-rightImage').clone();
+					addProject(clone, data, i);
+				}
+				else{
+					var clone = $('#project-leftImage').clone();
+					addProject(clone, data, i);
+				}
+			}
+
+			$('#projects-list');
+
+			$('#project-rightImage').children().eq(0).attr('style', "background-image: url('img/bg-showcase-4.jpg');");
+		}
+		function addProject(clone, data,i){
+			$(clone).children().eq(0).attr('style', "background-image: url('" + data.Projects[i].Image+ "');");
+			$(clone).children().eq(1).children().eq(0).replaceWith('<h2>'+ data.Projects[i].Title+'</h2>');
+			$(clone).children().eq(1).children().eq(1).replaceWith('<p class="lead mb-0">'+ data.Projects[i].Description + '</p>');
+			$(clone).children().eq(1).children().eq(2).attr('href', data.Projects[i].Link);
+			$(clone).appendTo('#projects-list').show();
+		}
+
+
+	</script>
 </html>
